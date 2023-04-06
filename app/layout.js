@@ -1,4 +1,10 @@
+import { Poppins } from "next/font/google";
 import "./globals.css";
+
+const poppins = Poppins({
+  weight: ["400", "700"],
+  subsets: ["latin-ext"],
+});
 
 export const metadata = {
   title: "Practice next13 crash course",
@@ -9,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={poppins.className}>{children}</body>
     </html>
   );
 }
